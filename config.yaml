@@ -1,0 +1,63 @@
+################## Fichier de configuration pour le Snakefile #####################
+# Changer les valeurs des paramètres pour adapter le workflow à votre environnement
+
+# Chemin vers augustus :
+####Pour le trouver, exécuter la commande suivante dans le terminal : cd Augustus/config && pwd
+augustus_config_path: "/Users/ambre/Augustus/config/"
+
+# Chemin vers biopython :
+####Pour le trouver, exécuter la commande suivante dans le terminal : pip show biopython | grep Location
+pythonpath: "/usr/local/bin"
+
+# Liste des espèces et des bases de données utilisées.
+# Les espèces listées doivent se trouver dans toutes les bases de données.
+list_species:
+  - Delphinapterus_leucas
+  - Lipotes_vexillifer
+  - Neophocaena_asiaeorientalis
+  - Balaenoptera_acutorostrata
+  - Platanista_gangetica
+  - Phocoena_sinus
+  - Lagenorhynchus_obliquidens
+  - Pontoporia_blainvillei
+  - Globicephala_melas
+  - Orcinus_orca
+  - Physeter_catodon
+  - Monodon_monoceros
+  - Balaenoptera_musculus
+  - Balaenoptera_physalus
+  - Tursiops_truncatus
+
+# Liste des bases de données utilisées
+list_DB:
+  - NCBI
+  - DNAZoo
+  
+
+# Chemin vers le dossier des génomes
+genome_dir: "/Users/ambre/Desktop"
+
+# Chemin vers le dossier des sorties
+output_dir: "/Users/ambre/Desktop"
+
+# Chemins vers les différents fichiers appelé dans le Snakemake
+extractionline_dir : "/Users/ambre/Desktop"
+multifastaToBd_dir : "/Users/ambre/Desktop"
+
+# Paramètres pour la règle augustus
+augustus_species: human
+augustus_protein: off
+augustus_introns: off
+augustus_start: off
+augustus_stop: off
+augustus_cds: off
+augustus_exonnames: off
+
+# Paramètres pour la règles split
+split_max_length: 2500
+
+# Paramètres pour la connexion à la base de donnée
+dbname: 'CeGeC'
+user: 'Ambre'
+host: 'localhost'
+port: '5432'
